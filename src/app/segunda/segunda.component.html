@@ -1,0 +1,61 @@
+
+<!--
+<button (click)="toggleMenu()" class="hamburger">
+  <span>mostrar ejercicios</span>
+</button>
+
+<app-menu-lateral></app-menu-lateral>-->
+
+
+  <!--espacios donde dropear-->
+  <div id="dropeable"class=" row">
+    <!--dia lunes-->
+    <div class="card card-outline-primary " >
+        <div class="card-header card-inverse card-primary">Lunes</div>
+          <div class="card-block scroll-list">
+            <li  *ngFor="let item of droppedItemsLunes" class="list-group-item">{{item.name}}</li>
+          </div>
+    </div>
+    <!--dia martes-->
+    <div class="card card-outline-primary " >
+        <div class="card-header card-inverse card-primary">Martes</div>
+          <div class="card-block scroll-list">
+            <li  *ngFor="let item of droppedItemsMartes" class="list-group-item">{{item.name}}</li>
+          </div>
+    </div>
+    <!--dia miercoles-->
+    <div class="card card-outline-primary" >
+        <div class="card-header card-inverse card-primary">Miercoles</div>
+          <div class="card-block scroll-list">
+            <li *ngFor="let item of droppedItemsMiercoles" class="list-group-item">{{item.name}}</li>
+          </div>
+    </div>
+    <!--dia jueves-->
+    <div class="card card-outline-primary" >
+      <div class="card-header card-inverse card-primary">Jueves</div>
+        <div class="card-block scroll-list">
+          <li *ngFor="let item of droppedItemsJueves" class="list-group-item">{{item.name}}</li>
+        </div>
+    </div>
+    <!--dia viernes-->
+    <div class="card card-outline-primary" >
+      <div class="card-header card-inverse card-primary">Viernes</div>
+        <div class="card-block scroll-list">
+          <li *ngFor="let item of droppedItemsViernes" class="list-group-item">{{item.name}}</li>
+        </div>
+    </div>
+    <!--dia sabado-->
+    <div class="card card-outline-primary" >
+      <div class="card-header card-inverse card-primary">Sabado</div>
+        <div class="card-block scroll-list">
+          <li *ngFor="let item of droppedItemsSabado" class="list-group-item">{{item.name}}</li>
+        </div>
+    </div>
+    <!--dia domingo-->
+    <div class="card card-outline-primary" >
+      <div class="card-header card-inverse card-primary">Domingo</div>
+        <div class="card-block scroll-list">
+          <li *ngFor="let item of droppedItemsDomingo" class="list-group-item">{{item.name}}</li>
+      </div>
+    </div>
+</div>

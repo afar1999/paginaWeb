@@ -1,0 +1,90 @@
+<p id="acerca">
+</p>
+<!--
+<button (click)="toggleMenu()" class="hamburger">
+  <span>mostrar ejercicios</span>
+</button>
+
+<app-menu-lateral></app-menu-lateral>-->
+
+<!--ejercicios que se pueden agarrar-->
+  <div id ="holi" class="card card-outline-success mb-3">
+      <div class="card-header card-inverse card-success">
+          Draggable Items
+          </div>
+      <div class="card-block scroll-list">
+          <div class="list-group">
+              <li class="list-group-item list-group-item-action list-group-item-success" [draggable] *ngFor="let item of gifs"
+                  [dragClass]="'active'" [dragData]="item" [dragScope]="item.type">
+                  <img src={{item.url}} width="90px">
+              </li>
+          </div>
+      </div>
+  </div>
+  
+  <!--espacios donde dropear-->
+  <div id="dropeable"class=" row">
+    <!--dia lunes-->
+    <div class="card card-outline-primary " >
+        <div class="card-header card-inverse card-primary" droppable [dragHintClass]="'drag-hint-scale'" [dragOverClass]="'bg-danger'"
+        [dropScope]="'deleteL'" (onDrop)="[onDeleteDropL($event)]">Lunes</div>
+          <div class="card-block scroll-list" droppable [dragOverClass]="'drag-target-border'" [dropScope]="['fruit', 'vegetable', 'gifs']"
+          [dragHintClass]="'drag-hint'" (onDrop)="onAnyDropLunes($event)">
+            <li draggable [dragClass]="'active'" [dragData]="item" [dragScope]="[item.type,'deleteL']" *ngFor="let item of droppedItemsLunes" class="list-group-item">{{item.name}}</li>
+          </div>
+    </div>
+    <!--dia martes-->
+    <div class="card card-outline-primary " >
+        <div class="card-header card-inverse card-primary" droppable [dragHintClass]="'drag-hint-scale'" [dragOverClass]="'bg-danger'"
+        [dropScope]="'deleteM'" (onDrop)="[onDeleteDropM($event)]">Martes</div>
+          <div class="card-block scroll-list" droppable [dragOverClass]="'drag-target-border'" [dropScope]="['fruit', 'vegetable', 'gifs']"
+          [dragHintClass]="'drag-hint'" (onDrop)="onAnyDropMartes($event)">
+            <li draggable [dragClass]="'active'" [dragData]="item" [dragScope]="[item.type,'deleteM']" *ngFor="let item of droppedItemsMartes" class="list-group-item">{{item.name}}</li>
+          </div>
+    </div>
+    <!--dia miercoles-->
+    <div class="card card-outline-primary" >
+        <div class="card-header card-inverse card-primary" droppable [dragHintClass]="'drag-hint-scale'" [dragOverClass]="'bg-danger'"
+        [dropScope]="'deleteMi'" (onDrop)="[onDeleteDropMi($event)]">Miercoles</div>
+          <div class="card-block scroll-list" droppable [dragOverClass]="'drag-target-border'" [dropScope]="['fruit', 'vegetable', 'gifs']"
+          [dragHintClass]="'drag-hint'" (onDrop)="onAnyDropMiercoles($event)">
+            <li draggable [dragClass]="'active'" [dragData]="item" [dragScope]="[item.type,'deleteMi']" *ngFor="let item of droppedItemsMiercoles" class="list-group-item">{{item.name}}</li>
+          </div>
+    </div>
+    <!--dia jueves-->
+    <div class="card card-outline-primary" >
+      <div class="card-header card-inverse card-primary" droppable [dragHintClass]="'drag-hint-scale'" [dragOverClass]="'bg-danger'"
+      [dropScope]="'deleteJ'" (onDrop)="[onDeleteDropJ($event)]">Jueves</div>
+        <div class="card-block scroll-list" droppable [dragOverClass]="'drag-target-border'" [dropScope]="['fruit', 'vegetable', 'gifs']"
+        [dragHintClass]="'drag-hint'" (onDrop)="onAnyDropJueves($event)">
+          <li draggable [dragClass]="'active'" [dragData]="item" [dragScope]="[item.type,'deleteJ']" *ngFor="let item of droppedItemsJueves" class="list-group-item">{{item.name}}</li>
+        </div>
+    </div>
+    <!--dia viernes-->
+    <div class="card card-outline-primary" >
+      <div class="card-header card-inverse card-primary" droppable [dragHintClass]="'drag-hint-scale'" [dragOverClass]="'bg-danger'"
+      [dropScope]="'deleteV'" (onDrop)="[onDeleteDropV($event)]">Viernes</div>
+        <div class="card-block scroll-list" droppable [dragOverClass]="'drag-target-border'" [dropScope]="['fruit', 'vegetable', 'gifs']"
+        [dragHintClass]="'drag-hint'" (onDrop)="onAnyDropViernes($event)">
+          <li draggable [dragClass]="'active'" [dragData]="item" [dragScope]="[item.type,'deleteV']" *ngFor="let item of droppedItemsViernes" class="list-group-item">{{item.name}}</li>
+        </div>
+    </div>
+    <!--dia sabado-->
+    <div class="card card-outline-primary" >
+      <div class="card-header card-inverse card-primary" droppable [dragHintClass]="'drag-hint-scale'" [dragOverClass]="'bg-danger'"
+      [dropScope]="'deleteS'" (onDrop)="[onDeleteDropS($event)]">Sabado</div>
+        <div class="card-block scroll-list" droppable [dragOverClass]="'drag-target-border'" [dropScope]="['fruit', 'vegetable', 'gifs']"
+        [dragHintClass]="'drag-hint'" (onDrop)="onAnyDropSabado($event)">
+          <li draggable [dragClass]="'active'" [dragData]="item" [dragScope]="[item.type,'deleteS']" *ngFor="let item of droppedItemsSabado" class="list-group-item">{{item.name}}</li>
+        </div>
+    </div>
+    <!--dia domingo-->
+    <div class="card card-outline-primary" >
+      <div class="card-header card-inverse card-primary" droppable [dragHintClass]="'drag-hint-scale'" [dragOverClass]="'bg-danger'"
+      [dropScope]="'deleteD'" (onDrop)="[onDeleteDropD($event)]">Domingo</div>
+        <div class="card-block scroll-list" droppable [dragOverClass]="'drag-target-border'" [dropScope]="['fruit', 'vegetable', 'gifs']"
+        [dragHintClass]="'drag-hint'" (onDrop)="onAnyDropDomingo($event)">
+          <li draggable [dragClass]="'active'" [dragData]="item" [dragScope]="[item.type,'deleteD']" *ngFor="let item of droppedItemsDomingo" class="list-group-item">{{item.name}}</li>
+      </div>
+    </div>
+</div>
